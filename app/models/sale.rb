@@ -3,11 +3,11 @@ class Sale < ActiveRecord::Base
 # AR Scope
 
     def self.active
-        where("sales.starts_on <= ? AND sales.end_on >= ?", Date.current, Date.current)
+        where("sales.starts_on <= ? AND sales.ends_on >= ?", Date.current, Date.current)
     end
 
     def finished?
-        end_on < Date.current
+        ends_on < Date.current
     end
 
     def upcoming?

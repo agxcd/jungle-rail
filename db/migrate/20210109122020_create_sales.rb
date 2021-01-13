@@ -4,7 +4,7 @@ class CreateSales < ActiveRecord::Migration
       t.string :name
       t.integer :percent_off
       t.date :starts_on
-      t.date :end_on
+      t.date :ends_on
 
       t.timestamps null: false
     end
