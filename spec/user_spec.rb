@@ -4,7 +4,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'Validations' do
     it 'should create valid user' do
-      user = User.create(
+      user = User.create!(
         first_name: "Simple",
         last_name: "Rick",
         email: "rick@123.com",
@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should not save user if password confirmations does not match ' do
-      user = User.create(
+      user = User.create!(
         first_name: "Simple",
         last_name: "Rick",
         email: "rick@123.com",
@@ -26,14 +26,14 @@ RSpec.describe User, type: :model do
     end
 
     it 'should not save user with same email' do
-      user = User.create(
+      user = User.create!(
         first_name: "Simple",
         last_name: "Rick",
         email: "rick@123.com",
         password: "12345",
         password_confirmation: "12345"
         )
-      user2 = User.create(
+      user2 = User.create!(
         first_name: "Simplely",
         last_name: "Rickly",
         email: "rick@123.com",
@@ -44,7 +44,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should not save without first name' do
-      user = User.create(
+      user = User.create!(
         first_name: nil,
         last_name: "Rick",
         email: "rick@123.com",
@@ -55,7 +55,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should not save without last name' do
-      user = User.create(
+      user = User.create!(
         first_name: "Simple",
         last_name: nil,
         email: "rick@123.com",
@@ -66,7 +66,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should not save without email' do
-      user = User.create(
+      user = User.create!(
         first_name: "Simple",
         last_name: "Rick",
         email: nil,
@@ -77,7 +77,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should not save user if password is less than five characters' do
-    user = User.create(
+    user = User.create!(
       first_name: "Simple",
       last_name: "Rick",
       email: "rick@123.com",
@@ -91,7 +91,7 @@ RSpec.describe User, type: :model do
 
   describe '.authenticate_with_credentials' do
     it 'should login valid user' do
-      user = User.create(
+      user = User.create!(
         first_name: "Simple",
         last_name: "Rick",
         email: "rick@123.com",
@@ -99,11 +99,11 @@ RSpec.describe User, type: :model do
         password_confirmation: "12345"
         )
         user1 = User.authenticate_with_credentials(user.email, user.password)
-      expect(user1).to be true
+      expect(user1.id).to be user.id
     end
 
     it "should login in user with capital letters in email" do
-    user = User.create(
+    user = User.create!(
       first_name: "Simple",
       last_name: "Rick",
       email: "rick@123.com",
@@ -111,11 +111,11 @@ RSpec.describe User, type: :model do
       password_confirmation: "12345"
         )
         user1 = User.authenticate_with_credentials('RIck@123.com', user.password)
-      expect(user1).to be true
+      expect(user1.id).to be user.id
     end
 
     it "should login in user with spaces in email" do
-      user = User.create(
+      user = User.create!(
         first_name: "Simple",
         last_name: "Rick",
         email: "rick@123.com",
@@ -123,7 +123,7 @@ RSpec.describe User, type: :model do
         password_confirmation: "12345"
           )
           user1 = User.authenticate_with_credentials("  rick@123.com ", user.password)
-        expect(user1).to be true
+        expect(user1.id).to be user.id
       end
   end
 end 
