@@ -4,9 +4,9 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 ## ScreenShot
 
-!["ScreenShot"](https://github.com/agxcd/jungle-rails/blob/master/doc/Jungle-home.png)
-!["ScreenShot"](https://github.com/agxcd/jungle-rails/blob/master/doc/Jungle-cart.png)
-!["ScreenShot"](https://github.com/agxcd/jungle-rails/blob/master/doc/Jungle-sale.png)
+!["ScreenShot"](https://github.com/agxcd/jungle-rail/blob/master/doc/Jungle-home.png)
+!["ScreenShot"](https://github.com/agxcd/jungle-rail/blob/master/doc/Jungle-cart.png)
+!["ScreenShot"](https://github.com/agxcd/jungle-rail/blob/master/doc/Jungle-sale.png)
 
 ## Setup
 
