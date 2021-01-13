@@ -4,6 +4,12 @@ class User < ActiveRecord::Base
   
     validates_uniqueness_of :email, case_sensitive: false, presence: true
     validates :first_name, :last_name, :email ,presence: true
-    validates :password, length: { minimum: 3 }
+    validates :password, length: { minimum: 5 }
+
+    def self.authenticate_with_credentials(email, password)
+      thisEmail = email.downcase.strip
+      user = User.find_by(email: thisEmail)
+      user && user.authenticate(password) ? true : false
+    end
 
   end
