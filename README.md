@@ -2,6 +2,11 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## ScreenShot
+
+!["ScreenShot"](https://github.com/agxcd/jungle-rails/blob/master/doc/Jungle-home.png)
+!["ScreenShot"](https://github.com/agxcd/jungle-rails/blob/master/doc/Jungle-cart.png)
+!["ScreenShot"](https://github.com/agxcd/jungle-rails/blob/master/doc/Jungle-sale.png)
 
 ## Setup
 
@@ -15,6 +20,7 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 8. Run `bin/rails s -b 0.0.0.0` to start the server
 
 ## testing
+
 1. Install PhantomJS `npm install -g phantomjs`
 2. bin/rspec spec/features
 
@@ -26,7 +32,7 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails: 4.2.6 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe
-* Ruby: 2.3.5 
+- Rails: 4.2.6 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+- PostgreSQL 9.x
+- Stripe
+- Ruby: 2.3.5
