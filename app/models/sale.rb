@@ -17,4 +17,6 @@ class Sale < ActiveRecord::Base
     def active?
         !upcoming? && !finished?
     end
+  
+    validates :name, :percent_off, :starts_on, :ends_on, presence: true
 end
